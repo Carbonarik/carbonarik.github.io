@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carbonarik</title>
+    <style>
+      body {
+        background-image: url("https://images.wallpaperscraft.ru/image/single/devochka_dozhd_anime_153417_1600x900.jpg");
+        background-size: cover;
+      }
+
+      button {
+        background-color: #171a21;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        height: 100px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      #steam {
+        top: 30%;
+        margin-right: 20px;
+      }
+
+      #vk {
+        top: 50%;
+        margin-right: 20px;
+      }
+
+      #telegram {
+        top: 70%;
+      }
+
+      button:hover {
+        border: 2px solid red;
+        box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 1);
+      }
+
+      #fly {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/56/fly-159002_960_720.png");
+        background-size: contain;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+      }
+
+      #fly:hover {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="steam" onclick="window.location.href='https://steamcommunity.com/profiles/76561199390685814/'">
+      Steam
+    </button>
+    <button id="vk" onclick="window.location.href='https://vk.com/carbonarik'">
+      VK
+    </button>
+    <button id="telegram" onclick="window.location.href='https://t.me/Karalineverny'">
+      Telegram
+    </button>
+    <div id="fly"></div>
+
+    <script>
+const fly = document.getElementById("fly");
+
+fly.addEventListener("click", () => {
+  fly.style.display = "none";
+  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
+});
+
+function randomizeFlyPosition() {
+  const topPosition = Math.floor(Math.random() * window.innerHeight);
+  const leftPosition = Math.floor(Math.random() * window.innerWidth);
+  fly.style.top = `${topPosition}px`;
+  fly.style.left = `${leftPosition}px`;
+}
+
+setInterval(randomizeFlyPosition, 650);
+    </script>
+  </body>
+</html>
